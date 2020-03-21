@@ -1,5 +1,5 @@
 .App {
-  text-align: center;
+  /* text-align: center; */
 }
 
 .App-logo {
@@ -18,8 +18,7 @@
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  
   font-size: calc(10px + 2vmin);
   color: white;
 }
@@ -35,4 +34,24 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.euiRadio .euiRadio__input~.euiRadio__label{
+  font-size: 1.6em;
+  margin-bottom: 15px; 
+}
+
+.euiRadio {
+ margin-top: 10vh; 
+ margin-left: 10vw; 
+}
+
+.euiCheckbox .euiCheckbox__input~.euiCheckbox__label {
+  font-size: 1.6em;
+  margin-bottom: 15px; 
+}
+
+.euiCheckbox {
+  margin-top: 10px; 
+  margin-left: 10vw; 
 }
