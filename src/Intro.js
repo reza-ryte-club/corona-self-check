@@ -59,11 +59,10 @@ const Intro = () => {
       content: "না",
       score: 0
     }, {
-      content: "কম",
+      content: "হ্যা, শারীরিক কাজের পর শ্বাসকষ্ট হয়, কিন্তু বিশ্রামরত অবস্থায় বা ঘুমের সময় হয় না",
       score: 2
     }, {
-      content: "হ্যা, মাঝে মাঝে",
-      id: "qBreathingTrouble.aYesModerate",
+      content: "হ্যা, বিশ্রামরত বা ঘুমের সময় শ্বাসকষ্ট হয়",
       score: 7
     }, {
       content: "হ্যা, প্রায় সবসময়ই",
@@ -75,16 +74,16 @@ const Intro = () => {
     content: "অন্য সব সময়ের মত",
     score: 0
   }, {
-    content: "দুর্বল মনে হয়",
+    content: "দুর্বল, কিন্তু চলাফেরা করা যায়",
     score: 1
   }, {
-    content: "মোটামুটি শয্যায়ায়ী",
+    content: "প্রায় সময়ই শুয়ে থাকতে হয়, কিন্তু স্বল্প সময়ের জন্য চলাফেরা করা যায়",
     score: 4
   }, {
-    content: "অনেকটা শয্যায়ায়ী",
+    content: "প্রায় সবমসয় শুয়ে থাকতে হয়, শুধু টয়লেটের সময় উঠি",
     score: 7
   }, {
-    content: "পুরোপুরি শয্যায়ায়ী",
+    content: "পুরোপুরি শয্যাশায়ী",
     score: 10
   }]
 
@@ -124,11 +123,11 @@ const Intro = () => {
   const questions = [
     "আপনার শরীরের তাপমাত্রা কত?",
     "সম্প্রতি কি কাশি হচ্ছে?",
-    "আপনার কি শ্বাসকষ্ট হচ্ছে?",
+    "আপনার কি সম্প্রতি শ্বাসকষ্ট হচ্ছে?",
     "দুর্বলতা অনুভব করছেন?",
     "করোনাভাইরাস (কোভিড-১৯) এ আক্রান্ত বা ঝুঁকির মধ্যে আছে আপনার ঘনিষ্ঠ এমন কেউ আছে?",
     "এই অসুখগুলোর কোনটা কী আপনি চিকিৎসাধীন? একাধিক উত্তরে টিক চিহ্ন দিতে পারেন",
-    "আপনার ইমিউন সিস্টেম(রোগ প্রতিরোধ ব্যবস্থা) কী কম ?",
+    "আপনার ইমিউন সিস্টেম(রোগ প্রতিরোধ ব্যবস্থা) কী দুর্বল?",
     "আপনার বয়স কত?",
     "ফলাফল"
   ]
@@ -221,41 +220,45 @@ const Intro = () => {
     }, {
       id: '14',
       label: listOfGeneralEnergy[3].content
-    }]
+    }, {
+      id: '15',
+      label: listOfGeneralEnergy[4].content
+    }
+  ]
 
 
   const nearbyAffectedPeopleOptions = [
     {
-      id: '15',
+      id: '16',
       label: listOfNearbyAffectedPeople[0].content
     },{
-      id: '16',
+      id: '17',
       label: listOfNearbyAffectedPeople[1].content
     }
   ]
   
   const immuneSystemOptions = [
     {
-      id: '17',
+      id: '18',
       label: listOfImmuneSystem[0].content
     }, {
-      id: '18',
+      id: '19',
       label: listOfImmuneSystem[1].content
     }
   ]
   
   const  ageGroupOptions = [
     {
-      id: '19',
+      id: '20',
       label: listOfAgeGroup[0].content
     }, {
-      id: '20',
+      id: '21',
       label: listOfAgeGroup[1].content
     }, {
-      id: '21',
+      id: '22',
       label: listOfAgeGroup[2].content
     }, {
-      id: '22',
+      id: '23',
       label: listOfAgeGroup[3].content
     }
   ]
@@ -282,17 +285,17 @@ const Intro = () => {
   
   const onChangeNearbyAffectedPeople = (id) => {
     setSelectedNearbyAffectedPeopleId(id)
-    setCurrentScore(listOfNearbyAffectedPeople[id - 15].score)
+    setCurrentScore(listOfNearbyAffectedPeople[id - 16].score)
   }
   
   const onChangeImmuneSystemCondition = (id) => {
     setSelectedImmuneSystemConditionId(id)
-    setCurrentScore(listOfImmuneSystem[id - 17].score)
+    setCurrentScore(listOfImmuneSystem[id - 18].score)
   }
   
   const onChangeAgeGroup = (id) => {
     setSelectedAgeGroupIdId(id)
-    setCurrentScore(listOfAgeGroup[id - 19].score)
+    setCurrentScore(listOfAgeGroup[id - 20].score)
   }
 
 
@@ -534,39 +537,39 @@ const Intro = () => {
       <EuiFlexGroup style={{ marginLeft: "10vw", marginRight: "10vw", display: currentStep === 6 ? 'flex' : 'none' }}>
         <EuiFlexItem>
           <EuiCheckbox
-            id='23'
+            id='24'
             label="উচ্চ রক্তচাপ"
             checked={statusHighBloodPressure}
             onChange={onChangeBloodPressure}
           />
           <EuiCheckbox
-            id='24'
+            id='25'
             label="হৃদরোগ"
             checked={statusHeartDisease}
             onChange={onChangeHeartDisease}
           />
           <EuiCheckbox
-            id='25'
+            id='26'
             label="ফুসফুসে সমস্যা"
             checked={statusLungsDisease}
             onChange={onChangeLungsDisease}
           />
           
           <EuiCheckbox
-            id='26'
+            id='27'
             label="ক্যান্সার"
             checked={statusCancer}
             onChange={onChangeCancer}
           />
           
           <EuiCheckbox
-            id='27'
+            id='28'
             label="ডায়াবেটিস"
             checked={statusDiabetis}
             onChange={onChangeDiabetis}
           />
           <EuiCheckbox
-            id='28'
+            id='29'
             label="কোনটাই না"
             checked={statusNoPriorCase}
             onChange={onChangeNoPriorCase}
@@ -666,7 +669,16 @@ const Intro = () => {
             আপনি নিজের যত্ন নিজে নিতে পারবেন।
           </h2>
           <h2>
-            আপনি যদি উদ্বিগ্ন হন তবে আপনি 1177 (শুধু সুইডেনের জন্য প্রযোজ্য) নাম্বারে যোগাযোগ করুন।
+              আপনি যদি উদ্বিগ্ন হন তবে আপনি 1177 (শুধু সুইডেনের জন্য প্রযোজ্য) নাম্বারে যোগাযোগ করুন। সর্দিকাশির জন্য প্রয়োজনীয় তথ্য পেতে &nbsp;
+            <a href="https://www.1177.se/Stockholm/sjukdomar--besvar/infektioner/forkylning-och-influensa/" target="_blank">এখানে ক্লিক করুন।</a>
+          </h2>
+          <h2>
+              বাসায় থাকার সময়কাল এবং পরিচর্যাকালীন তথ্যের জন্য &nbsp;
+            <a href="https://www.1177.se/Stockholm/sa-fungerar-varden/varden-i-stockholms-lan/om-corona/om-att-stanna-hemma/" target="_blank">এখানে ক্লিক করুন।</a>
+          </h2>
+          <h2>
+              আপনি কী উৎকন্ঠিত? করোনা ভাইরাস সম্পর্কিত তথ্যের জন্য &nbsp;
+            <a href="https://www.1177.se/Stockholm/sa-fungerar-varden/varden-i-stockholms-lan/om-corona/" target="_blank">এখানে ক্লিক করুন।</a>
           </h2>
           </EuiText>
         </EuiFlexItem>
@@ -675,11 +687,11 @@ const Intro = () => {
         <EuiFlexItem>
           <EuiSpacer size="l" />
           <EuiFlexItem grow={false}>
-            <EuiButtonEmpty style={{ textAlign: "center", fontSize: "1.6em" }} onClick={() => {
+            <EuiButton style={{ textAlign: "center", fontSize: "1.6em" }} onClick={() => {
               window.location.replace('/')
             }}>
               নতুন নীরিক্ষা শুরু করুন
-            </EuiButtonEmpty>
+            </EuiButton>
           </EuiFlexItem>
         </EuiFlexItem>
       </EuiFlexGroup>

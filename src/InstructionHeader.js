@@ -14,7 +14,7 @@ const InstructionHeader = () => {
       <EuiSpacer size="l" />
       <EuiText>
         <h2 style={{ textAlign: "center" }}>
-          <strong>– জেনে নিন আপনার নিজের যত্ন নিজে নিতে পারবেন, নাকি সাস্হ্যসেবা কর্তৃপক্ষের সহায়তা দরকার </strong>
+          <strong>– জেনে নিন আপনার নিজের যত্ন নিজে নিতে পারবেন, নাকি স্বাস্থ্যসেবা কর্তৃপক্ষের সহায়তা দরকার </strong>
         </h2>
       <EuiSpacer size="l" />
       </EuiText>
